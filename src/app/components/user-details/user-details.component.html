@@ -1,0 +1,15 @@
+<div *ngIf="selectUser$ | async as user" class="m-2 p-2" >
+    <ng-container *ngIf="user._id">
+        <h3>{{user.firstName}} {{user.secondName}}</h3>
+        <p>Username : {{user.userName}}</p>
+        <p>Mobile : {{user.mobile}}</p>
+        <p>Email : {{user.email}}</p>
+        <p>DOB : {{user.dob | date:'medium'}}</p>
+        <p>Bio : {{user.bio ? user.bio : 'Not Given'}}</p>
+        <p>Gender : {{user.gender}}</p>
+    </ng-container>
+
+    <ng-container *ngIf="!user._id">
+        <h3>No User Selected</h3>
+    </ng-container>
+</div>

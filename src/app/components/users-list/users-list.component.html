@@ -1,0 +1,5 @@
+<ul *ngIf="this.users$ | async" class="list-group">
+    <li *ngFor="let user of this.users$|async" class="list-group-item {{user._id === selectedUserId ? ' active' :''}}" (click)="selectUser(user?._id)">
+        {{user.firstName}} {{user.secondName}} <strong>(@{{user.userName}})</strong>
+    </li>
+</ul>
